@@ -1,0 +1,14 @@
+GET /wspl/sistema/ProposicaoConsultaForm.do HTTP/1.1
+Host: www.cmc.pr.gov.br
+Cookie: JSESSIONID=451CCB8B7C8AC78FF472106C38BED16C
+
+
+GET http://www.cmc.pr.gov.br/wspl/sistema/ProposicaoConsultaForm.do HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1
+Cookie: JSESSIONID=451CCB8B7C8AC78FF472106C38BED16C
+Connection: Keep-Alive
+Accept-Encoding: gzip, deflate
+Accept-Language: pt-BR,en,*
+Host: www.cmc.pr.gov.br
+
