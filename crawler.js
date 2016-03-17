@@ -6,20 +6,32 @@ page.onConsoleMessage = function(msg) {
 };
 
 phantom.addCookie({
-  'name': 'JSESSIONID',
-  'value': '451CCB8B7C8AC78FF472106C38BED16C',
-  'domain'   : 'www.cmc.pr.gov.br',
-  'path'     : '/wspl/sistema',
+    'name': 'JSESSIONID',
+    'value': 'A76698A50CD14491EFFFF97B6408D356',
+    'domain': 'www.cmc.pr.gov.br',
+    'path': '/wspl/'
 });
-
-//http://code.jquery.com/jquery-2.2.1.min.js
 
 page.open("http://www.cmc.pr.gov.br/wspl/sistema/ProposicaoConsultaForm.do", function(status) {
-    page.includeJs("http://code.jquery.com/jquery-2.2.1.min.js", function() {
+    //page.render('google_home.jpeg', {format: 'jpeg', quality: '100'});
+    page.includeJs('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', function() {
         page.evaluate(function() {
-            var especies = $("#tpr_classe option");
-            console.log(especies);
+            $('#tpr_classe option').each(function(key, value) {
+                console.log($(value).val());
+            });
         });
-        phantom.exit()
+
+        phantom.exit(0);
     });
 });
+
+// page.onError = function(msg, trace) {
+//     var msgStack = ['ERROR: ' + msg];
+//     if (trace && trace.length) {
+//         msgStack.push('TRACE:');
+//         trace.forEach(function(t) {
+//             msgStack.push(' -> ' + t.file + ': ' + t.line + (t.function ? ' (in function "' + t.function+'")' : '));
+//         });
+//     }
+//     console.error(msgStack.join('\n'));
+// };
